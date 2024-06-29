@@ -2,6 +2,7 @@ import { Title, Text, Button, Container } from '@mantine/core';
 import { Dots } from './Dots';
 import { Link} from 'react-router-dom';
 import classes from './HeroText.module.css';
+//import glitch from './glitch.css';
 
 export function HeroText() {
   return (
@@ -11,22 +12,23 @@ export function HeroText() {
       <Dots className={classes.dots} style={{ left: 0, top: 140 }} />
       <Dots className={classes.dots} style={{ right: 0, top: 60 }} />
 
-      <div className={classes.inner}>
-        <Title className={classes.title}>
+      <div className={classes.wave}></div>
+      <Title className={classes.title}>
           Let Me{' '}
           <Text
-            inherit
-            variant="gradient"
-            component="span"
-            gradient={{ from: "blue", to: "green" }}
+            // inherit
+            // variant="gradient"
+            // component="span"
+            // gradient={{ from: "white", to: "yellow" }}
+            className={classes.neon}
             >
             Break It Down
             </Text>{' '}
           For You
         </Title>
 
-        <Container p={0} size={600}>
-          <Text size="lg" c="dimmed" className={classes.description}>
+        <Container p={0} size={500}>
+          <Text className={classes.description}>
           This AI powered project uses computer vision for you to boogie and lose weight at the same time.
           </Text>
         </Container>
@@ -38,7 +40,6 @@ export function HeroText() {
           </Button>
         </Link>
         </div>
-      </div>
       <Dots className={classes.dots} style={{ left: 0, top: 500 }} />
       <Dots className={classes.dots} style={{ left: 60, top: 400 }} />
       <Dots className={classes.dots} style={{ left: 1000, top: 400 }} />
