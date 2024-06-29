@@ -1,7 +1,6 @@
 .smallcard {
-    width: 100%;
-    max-width: 400px; 
-    padding: 16px; 
+    max-width: 450px; 
+    padding: 24px; 
     margin: 0 auto; 
     box-sizing: border-box; 
     
@@ -13,4 +12,11 @@
     display: flex;
     justify-content: flex-end; /* Align items to the right */
     flex: 1; /* Ensure it takes up remaining space */
-  }
+    max-width: 500px;
+}
+.positioning {
+    position: absolute;
+    bottom: 80px; /* Adjust as needed */
+    right: 30px; /* Adjust as needed */
+    max-width: 500px;
+}

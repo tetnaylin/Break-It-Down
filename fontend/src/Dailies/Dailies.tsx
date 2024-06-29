@@ -4,6 +4,7 @@ import classes from './Dailies.module.css';
 
 export function Stats() {
    return (
+    <div className={classes.positioning}>
        <Card withBorder radius="xl" padding="xs" bg="var(--mantine-color-body)" className={classes.smallcard}>
         
          <Text fz="xl" tt="uppercase" fw={1000} c="dimmed">
@@ -40,5 +41,6 @@ export function Stats() {
          <Progress value={0} mt="md" size="lg" radius="s" />
         
        </Card>
+      </div>
      );
 }
