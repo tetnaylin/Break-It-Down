@@ -29,23 +29,39 @@ function getCategoryClass(category: string) {
 
 export function Button() {
     const [state] = useListState(data);
-
-    const items = state.map((item, index) => (
-        <Link to ="/game" key={index} className={cx(classes.item, classes.link, getCategoryClass(item.category))}>
-            <Text className={cx(classes.symbol, getCategoryClass(item.category))}>
-                {item.category}
-            </Text>
-            <div className={classes['text-container']}>
-                <Text size="md">{item.name}</Text>
-                <Text c="dimmed" size="sm">
-                    Artist: {item.artist}
+    const items = state.map((item, index) => {
+        const content = (
+            <>
+                <Text className={cx(classes.symbol, getCategoryClass(item.category))}>
+                    {item.category}
                 </Text>
-            </div>
-        </Link>
-    ));
+                <div className={classes['text-container']}>
+                    <Text size="md">{item.name}</Text>
+                    <Text size="sm" c="white">
+                        Artist: {item.artist}
+                    </Text>
+                </div>
+            </>
+        );
+
+        if (item.name === 'HaiDiLao') {
+            return (
+                <Link to="/selection/play" key={index} className={cx(classes.item, classes.link, getCategoryClass(item.category))}>
+                    {content}
+                </Link>
+            );
+        } else {
+            return (
+                <div key={index} className={cx(classes.item, getCategoryClass(item.category))}>
+                    {content}
+                </div>
+            );
+        }
+    });
 
     return (
         <div>
+            <Text size="xl" className={classes.neon}>Break It Down</Text>
             {items}
         </div>
     );
