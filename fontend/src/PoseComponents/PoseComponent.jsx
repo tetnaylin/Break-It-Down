@@ -35,8 +35,8 @@ function PoseComponent(videoPath) {
     <div className="App">
       <h1>*INSERT SCORE HERE*</h1>
       <div className="video-inputs">
-        <PoseCameraComponent sendGradients={handleGradients1}/>
         <PoseVideoComponent videoPath={videoPath.videoPath} sendGradients={handleGradients2}/>
+        <PoseCameraComponent sendGradients={handleGradients1}/>
       </div>
       {/* <div>
         <input type="file" accept="video/*" onChange={handleVideoFileChange} />
