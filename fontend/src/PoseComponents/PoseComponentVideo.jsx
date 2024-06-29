@@ -3,11 +3,12 @@ import { Pose, POSE_CONNECTIONS } from '@mediapipe/pose';
 import { drawConnectors, drawLandmarks } from '@mediapipe/drawing_utils';
 import { getGradients } from './poseHelpers';
 
-const PoseVideoComponent = ({ videoSrc, sendGradients }) => {
+const PoseVideoComponent = ({ videoPath, sendGradients }) => {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
 
   useEffect(() => {
+    console.log('TEST', videoPath);
     const pose = new Pose({
       locateFile: (file) => `https://cdn.jsdelivr.net/npm/@mediapipe/pose/${file}`
     });
@@ -57,11 +58,11 @@ const PoseVideoComponent = ({ videoSrc, sendGradients }) => {
       }
       canvasCtx.restore();
     }
-  }, [videoSrc]);
+  }, [videoPath]);
 
   return (
     <div className="pose-container">
-      <video ref={videoRef} src={videoSrc} controls style={{ display: 'none' }}></video>
+      <video ref={videoRef} src={videoPath} controls style={{ display: 'none' }}></video>
       <canvas ref={canvasRef} width="640px" height="360px"></canvas>
     </div>
   );

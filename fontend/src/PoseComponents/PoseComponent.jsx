@@ -4,8 +4,7 @@ import PoseVideoComponent from './PoseComponentVideo';
 import { calculateDeviation } from './poseHelpers';
 import './PoseComponent.css'
 
-function PoseComponent() {
-  const [videoSrc, setVideoSrc] = useState('');
+function PoseComponent(videoPath) {
   // gradients 1 is for players
   const [gradients1, setGradients1] = useState([]);
   // gradients 2 is for reference footage
@@ -32,25 +31,16 @@ function PoseComponent() {
     console.log('Test', sumDeviation);
   }, [sumDeviation])
 
-
-  const handleVideoFileChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      const url = URL.createObjectURL(file);
-      setVideoSrc(url);
-    }
-  };
-
   return (
     <div className="App">
       <h1>*INSERT SCORE HERE*</h1>
       <div className="video-inputs">
         <PoseCameraComponent sendGradients={handleGradients1}/>
-        {videoSrc && <PoseVideoComponent videoSrc={videoSrc} sendGradients={handleGradients2}/>}
+        <PoseVideoComponent videoPath={videoPath.videoPath} sendGradients={handleGradients2}/>
       </div>
-      <div>
+      {/* <div>
         <input type="file" accept="video/*" onChange={handleVideoFileChange} />
-      </div>
+      </div> */}
     </div>
   );
 }
