@@ -5,6 +5,7 @@ import { theme } from "./theme";
 import { HeroText } from "./HeroText/HeroText";
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { Stats } from "./Dailies/Dailies";
+import PoseComponent from "./PoseComponents/PoseComponent";
 
 
 export default function App() {
@@ -35,4 +36,8 @@ export function SecondPage() {
       <Stats></Stats>
     </div>
   )
+}
+
+export function GamePage() {
+  
 }
