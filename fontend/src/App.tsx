@@ -3,13 +3,37 @@ import { MantineProvider } from "@mantine/core";
 import { theme } from "./theme";
 //import { Welcome } from "./Welcome/Welcome";
 import { HeroText } from "./HeroText/HeroText";
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { Stats } from "./Dailies/Dailies";
 
 export default function App() {
   return (
       <MantineProvider theme={theme}>
-        
-        <HeroText />
+        <Router>
+          <Routes> 
+          <Route path="/" element={<HomePage />} />
+           <Route path="/selection" element={<SecondPage />} />
+          </Routes>
+        </Router>
+          
         
       </MantineProvider>
   );
+}
+
+export function HomePage() {
+  return (
+    <MantineProvider theme={theme}>
+        <HeroText />
+    </MantineProvider>
+  )
+}
+
+export function SecondPage() {
+  return (
+    <div>
+      <Stats></Stats>
+    </div>
+
+  )
 }
