@@ -16,7 +16,6 @@ export default function App() {
           <Routes> 
           <Route path="/" element={<HomePage/>} />
            <Route path="/selection" element={<SecondPage />} />
-           <Route path="/game" element={<ThirdPage />} />
            <Route path="/selection/play" element={<GamePage/>}/>
           </Routes>
         </Router>
@@ -37,7 +36,6 @@ export function SecondPage() {
     <div>
       <Stats />
       <br></br>
-      <h1> <center> Select Songs </center> </h1>
       <br>
       </br>
       <br>
@@ -56,12 +54,6 @@ export function GamePage() {
     <div>
       <PoseComponent videoPath={videoPath}></PoseComponent>
     </div>  )
-}
-
-export function ThirdPage() {
-  return (
-    <MantineProvider theme={theme}></MantineProvider>
-  )
 }
 
 export function GameOverPage() {
