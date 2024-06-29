@@ -41,7 +41,7 @@ function PoseComponent(videoPath) {
   // }, [sumDeviation])
 
   return (
-    <div className="pose-container">
+    <div className="PoseComponent">
       {isOver ? (
         <GameOverPage></GameOverPage>
       ) : (
