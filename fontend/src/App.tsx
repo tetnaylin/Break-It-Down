@@ -6,6 +6,7 @@ import { HeroText } from "./HeroText/HeroText";
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { Stats } from "./Dailies/Dailies";
 
+
 export default function App() {
   return (
       <MantineProvider theme={theme}>
@@ -13,10 +14,9 @@ export default function App() {
           <Routes> 
           <Route path="/" element={<HomePage />} />
            <Route path="/selection" element={<SecondPage />} />
+           <Route path="/selection/play" element={<></>}/>
           </Routes>
         </Router>
-          
-        
       </MantineProvider>
   );
 }
@@ -34,6 +34,5 @@ export function SecondPage() {
     <div>
       <Stats></Stats>
     </div>
-
   )
 }
