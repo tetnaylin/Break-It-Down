@@ -1,0 +1,16 @@
+.smallcard {
+    width: 100%;
+    max-width: 400px; 
+    padding: 16px; 
+    margin: 0 auto; 
+    box-sizing: border-box; 
+    
+}
+
+.container {
+    margin-left: 20px; /* Add some space between selection and stats */
+    align-self: flex-start; /* Align the stats component to the top */
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    flex: 1; /* Ensure it takes up remaining space */
+  }

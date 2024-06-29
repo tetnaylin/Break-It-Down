@@ -1,5 +1,6 @@
 import { Title, Text, Button, Container } from '@mantine/core';
 import { Dots } from './Dots';
+import { Link} from 'react-router-dom';
 import classes from './HeroText.module.css';
 
 export function HeroText() {
@@ -31,9 +32,11 @@ export function HeroText() {
         </Container>
 
         <div className={classes.controls}>
+        <Link to ="/selection">
           <Button className={classes.control} size="lg" variant="default" color="gray">
             Play
           </Button>
+        </Link>
         </div>
       </div>
       <Dots className={classes.dots} style={{ left: 0, top: 500 }} />
