@@ -4,10 +4,10 @@ import { theme } from "./theme";
 import { HeroText } from "./HeroText/HeroText";
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { Stats } from "./Dailies/Dailies";
-import { StatsRing } from "./StatsRing/StatsRing";
+import { StatsRing, StatsRingProps } from "./StatsRing/StatsRing";
 import { Button } from "./Music/Music";
 import PoseComponent from "./PoseComponents/PoseComponent";
-import { GameOver, GameOverProps } from "./GameOverAdaptation/GameOver"
+import { GameOver } from "./GameOverAdaptation/GameOver"
 export default function App() {
   return (
       <MantineProvider theme={theme}>
@@ -56,11 +56,11 @@ export function GamePage() {
     </div>  )
 }
 
-export function GameOverPage({ deviation }: GameOverProps) {
+export function GameOverPage({ deviation }: StatsRingProps) {
   return (
     <MantineProvider theme={theme}>
-      <GameOver deviation={deviation}/>
-      <StatsRing/>
+      <GameOver/>
+      <StatsRing deviation={deviation}/>
     </MantineProvider>
   )
 }

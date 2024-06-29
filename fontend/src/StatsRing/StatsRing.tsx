@@ -6,22 +6,51 @@ const icons = {
   down: IconArrowDownRight,
 };
 
-const data = [
-    // TODO: Add data here!
-  { label: 'Final Score', stats: '456,578', progress: 65, color: 'teal', icon: 'up' },
-  { label: 'Estimated Calories Lost', stats: '2,550', progress: 72, color: 'blue', icon: 'up' },
-//   {
-//     label: 'Orders',
-//     stats: '4,735',
-//     progress: 52,
-//     color: 'red',
-//     icon: 'down',
-//   },
-] as const;
 
-export function StatsRing() {
+export interface StatsRingProps {
+  deviation: number;
+}
+
+export function StatsRing({ deviation }: StatsRingProps) {
+  let data = [
+    // TODO: Add data here!
+  { label: 'Final Score', stats: '456,578', progress: 65, color: 'teal', icon: icons.up },
+  { label: 'Estimated Calories Lost', stats: 'N/A', progress: 72, color: 'blue', icon: 'up' },
+  //   {
+  //     label: 'Orders',
+  //     stats: '4,735',
+  //     progress: 52,
+  //     color: 'red',
+  //     icon: 'down',
+  //   },
+  ];
+
+
+  // total deviation: 1000 -> 100%
+  const totalDeviation = deviation;
+  console.log(totalDeviation);
+  let scoreGrade = "YOU'RE ON FIRE";
+
+  if (totalDeviation > 10000) {
+    data[0].progress = 20
+    scoreGrade = 'BRO YOU TWEAKIN'
+  }
+  else if (totalDeviation > 6000) {
+    data[0].progress = 65
+    scoreGrade = 'OK!'
+  }
+  else if (totalDeviation > 2000) {
+    data[0].progress = 80
+    scoreGrade = 'EXCELLENT'
+  }
+  else {
+    data[0].progress = 95
+  }
+
+  data[0].stats = scoreGrade;
+
   const stats = data.map((stat) => {
-    const Icon = icons[stat.icon];
+    const Icon = stat.icon;
     return (
       <Paper withBorder radius="md" p="xs" key={stat.label}>
         <Group>
