@@ -114,7 +114,8 @@
     position: fixed;
     width: 200%;
     height: 12em;
-    animation: wave 10s -3s linear infinite;
+    /* Adjust animation speed here */
+    animation: wave 3s -3s linear infinite;
     transform: translate3d(0, 0, 0);
     opacity: 0.8;
     bottom: 0;
