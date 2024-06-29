@@ -2,7 +2,27 @@ import { Title, Text, Button, Container } from '@mantine/core';
 import { Link} from 'react-router-dom';
 import classes from './GameOver.module.css';
 
-export function GameOver() {
+
+export interface GameOverProps {
+  deviation: number;
+}
+
+
+export function GameOver({ deviation }: GameOverProps) {
+  // total deviation: 1000 -> 100%
+  const totalDeviation = deviation;
+  let scoreGrade = "YOU'RE ON FIRE";
+
+  if (totalDeviation > 100000) {
+    scoreGrade = 'BRO YOU TWEAKIN'
+  }
+  if (totalDeviation > 6000) {
+    scoreGrade = 'OK!'
+  }
+  if (totalDeviation > 2000) {
+    scoreGrade = 'EXCELLENT'
+  }
+
   return (
     <Container className={classes.wrapper} size={1400}>
       

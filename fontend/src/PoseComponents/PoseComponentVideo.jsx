@@ -66,7 +66,7 @@ const PoseVideoComponent = ({ videoPath, sendGradients, sendOverState }) => {
   return (
     <div className="pose-container">
       <video ref={videoRef} src={videoPath} controls style={{ display: 'none' }}></video>
-      <canvas ref={canvasRef} width="640px" height="360px"></canvas>
+      <canvas className="maintain-aspect-ratio" ref={canvasRef} width="640px" height="360px"></canvas>
     </div>
   );
 };

@@ -16,3 +16,7 @@
 canvas {
   border: 1px solid #ccc; /* Optional: add a border to the canvas */
 }
+
+.maintain-aspect-ratio {
+  object-fit: contain;
+}

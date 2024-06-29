@@ -29,21 +29,22 @@ function PoseComponent(videoPath) {
   // TODO: sum deviation not getting updated properly
   // when gradient1 (player's gradients) gets updated, calculate sumDeviation
   useEffect(() => {
-    setSumDeviation(current => current += calculateDeviation(gradients1, gradients2));
+    let deviation = calculateDeviation(gradients1, gradients2);
+    setSumDeviation(current => current += deviation);
   }, [gradients1])
 
   useEffect(() => {
     console.log(isOver);
   }, [isOver])
 
-  // useEffect(() => {
-  //   console.log('Test', sumDeviation);
-  // }, [sumDeviation])
+  useEffect(() => {
+    console.log('Test', sumDeviation);
+  }, [sumDeviation])
 
   return (
     <div className="PoseComponent">
       {isOver ? (
-        <GameOverPage></GameOverPage>
+        <GameOverPage deviation={sumDeviation}></GameOverPage>
       ) : (
         <>
           <h1>*INSERT SCORE HERE*</h1>

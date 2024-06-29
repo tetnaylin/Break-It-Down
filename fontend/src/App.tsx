@@ -7,7 +7,7 @@ import { Stats } from "./Dailies/Dailies";
 import { StatsRing } from "./StatsRing/StatsRing";
 import { Button } from "./Music/Music";
 import PoseComponent from "./PoseComponents/PoseComponent";
-import { GameOver } from "./GameOverAdaptation/GameOver"
+import { GameOver, GameOverProps } from "./GameOverAdaptation/GameOver"
 export default function App() {
   return (
       <MantineProvider theme={theme}>
@@ -16,7 +16,7 @@ export default function App() {
           <Route path="/" element={<HomePage/>} />
            <Route path="/selection" element={<SecondPage />} />
            <Route path="/selection/play" element={<GamePage/>}/>
-           <Route path="/game_over" element={<GameOverPage/>}/>
+           {/* <Route path="/game_over" element={<GameOverPage/>}/> */}
           </Routes>
         </Router>
       </MantineProvider>
@@ -56,10 +56,10 @@ export function GamePage() {
     </div>  )
 }
 
-export function GameOverPage() {
+export function GameOverPage({ deviation }: GameOverProps) {
   return (
     <MantineProvider theme={theme}>
-      <GameOver/>
+      <GameOver deviation={deviation}/>
       <StatsRing/>
     </MantineProvider>
   )
