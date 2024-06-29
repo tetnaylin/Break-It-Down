@@ -3,6 +3,7 @@ import PoseCameraComponent from './PoseComponentCamera';
 import PoseVideoComponent from './PoseComponentVideo';
 import { calculateDeviation } from './poseHelpers';
 import './PoseComponent.css'
+import { GameOverPage } from './../App';
 
 function PoseComponent(videoPath) {
   // gradients 1 is for players
@@ -10,7 +11,7 @@ function PoseComponent(videoPath) {
   // gradients 2 is for reference footage
   const [gradients2, setGradients2] = useState([]);
   const [sumDeviation, setSumDeviation] = useState(0);
-
+  const [isOver, setIsOver] = useState(false);
 
   // get gradients data back from child
   const handleGradients1 = (gradients) => {
@@ -21,6 +22,10 @@ function PoseComponent(videoPath) {
     setGradients2(gradients);
   }
 
+  const handleGameOver = (isGameOver) => {
+    setIsOver(isGameOver);
+  }
+
   // TODO: sum deviation not getting updated properly
   // when gradient1 (player's gradients) gets updated, calculate sumDeviation
   useEffect(() => {
@@ -28,19 +33,27 @@ function PoseComponent(videoPath) {
   }, [gradients1])
 
   useEffect(() => {
-    console.log('Test', sumDeviation);
-  }, [sumDeviation])
+    console.log(isOver);
+  }, [isOver])
+
+  // useEffect(() => {
+  //   console.log('Test', sumDeviation);
+  // }, [sumDeviation])
 
   return (
-    <div className="App">
-      <h1>*INSERT SCORE HERE*</h1>
-      <div className="video-inputs">
-        <PoseVideoComponent videoPath={videoPath.videoPath} sendGradients={handleGradients2}/>
-        <PoseCameraComponent sendGradients={handleGradients1}/>
-      </div>
-      {/* <div>
-        <input type="file" accept="video/*" onChange={handleVideoFileChange} />
-      </div> */}
+    <div className="pose-container">
+      {isOver ? (
+        <GameOverPage></GameOverPage>
+      ) : (
+        <>
+          <h1>*INSERT SCORE HERE*</h1>
+          <div className="video-inputs">
+            <PoseVideoComponent videoPath={videoPath.videoPath} sendGradients={handleGradients2} sendOverState={handleGameOver}/>
+            <PoseCameraComponent sendGradients={handleGradients1}/>
+          </div>
+        </>
+      )
+      }
     </div>
   );
 }

@@ -3,7 +3,7 @@ import { Pose, POSE_CONNECTIONS } from '@mediapipe/pose';
 import { drawConnectors, drawLandmarks } from '@mediapipe/drawing_utils';
 import { getGradients } from './poseHelpers';
 
-const PoseVideoComponent = ({ videoPath, sendGradients }) => {
+const PoseVideoComponent = ({ videoPath, sendGradients, sendOverState }) => {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
 
@@ -28,6 +28,9 @@ const PoseVideoComponent = ({ videoPath, sendGradients }) => {
       if (videoRef.current && !videoRef.current.paused && !videoRef.current.ended) {
         await pose.send({ image: videoRef.current });
         requestAnimationFrame(onFrame);
+      }
+      else {
+        sendOverState(true);
       }
     };
 
