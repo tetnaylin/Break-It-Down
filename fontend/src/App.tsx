@@ -4,7 +4,8 @@ import { theme } from "./theme";
 import { HeroText } from "./HeroText/HeroText";
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { Stats } from "./Dailies/Dailies";
-
+import { StatsRing } from "./StatsRing/StatsRing";
+import { Button } from "./Music/Music";
 
 export default function App() {
   return (
