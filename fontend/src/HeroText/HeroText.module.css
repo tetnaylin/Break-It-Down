@@ -16,7 +16,7 @@
   
   .dots {
     position: absolute;
-    color: light-dark(var(--mantine-color-gray-1), var(--mantine-color-white));
+    color:  var(--mantine-color-white);
   
     @media (max-width: 48em) {
       display: none;
@@ -46,7 +46,7 @@
   }
   
   .highlight {
-    color: light-dark(var(--mantine-color-blue-6), var(--mantine-color-blue-4));
+    color: var(--mantine-color-blue-4);
   }
   
   .description {

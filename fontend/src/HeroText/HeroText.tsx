@@ -27,9 +27,9 @@ export function HeroText() {
           For You
         </Title>
 
-        <Container p={0} size={500}>
+        <Container p={0} size={525}>
           <Text className={classes.description}>
-          This AI powered project uses computer vision for you to boogie and lose weight at the same time.
+          This is an AI powered project which uses computer vision for you to boogie and lose weight at the same time.
           </Text>
         </Container>
 
