@@ -1,5 +1,5 @@
 import "@mantine/core/styles.css";
-import { MantineProvider } from "@mantine/core";
+import { MantineProvider, Overlay, AspectRatio  } from "@mantine/core";
 import { theme } from "./theme";
 import { HeroText } from "./HeroText/HeroText";
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
@@ -7,8 +7,7 @@ import { Stats } from "./Dailies/Dailies";
 import { StatsRing } from "./StatsRing/StatsRing";
 import { Button } from "./Music/Music";
 import PoseComponent from "./PoseComponents/PoseComponent";
-
-
+import { GameOver } from "./GameOverAdaptation/GameOver"
 export default function App() {
   return (
       <MantineProvider theme={theme}>
@@ -18,6 +17,7 @@ export default function App() {
            <Route path="/selection" element={<SecondPage />} />
            <Route path="/game" element={<ThirdPage />} />
            <Route path="/selection/play" element={<GamePage/>}/>
+           <Route path="/game_over" element={<GameOverPage/>}/>
           </Routes>
         </Router>
       </MantineProvider>
@@ -67,6 +67,7 @@ export function ThirdPage() {
 export function GameOverPage() {
   return (
     <MantineProvider theme={theme}>
+      <GameOver/>
       <StatsRing/>
     </MantineProvider>
   )

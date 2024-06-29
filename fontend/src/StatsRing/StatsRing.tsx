@@ -1,4 +1,4 @@
-import { RingProgress, Text, SimpleGrid, Paper, Center, Group, rem } from '@mantine/core';
+import { RingProgress, Text, SimpleGrid, Paper, Center, Group, Container, rem } from '@mantine/core';
 import { IconArrowUpRight, IconArrowDownRight } from '@tabler/icons-react';
 
 const icons = {
@@ -7,15 +7,16 @@ const icons = {
 };
 
 const data = [
-  { label: 'Page views', stats: '456,578', progress: 65, color: 'teal', icon: 'up' },
-  { label: 'New users', stats: '2,550', progress: 72, color: 'blue', icon: 'up' },
-  {
-    label: 'Orders',
-    stats: '4,735',
-    progress: 52,
-    color: 'red',
-    icon: 'down',
-  },
+    // TODO: Add data here!
+  { label: 'Final Score', stats: '456,578', progress: 65, color: 'teal', icon: 'up' },
+  { label: 'Estimated Calories Lost', stats: '2,550', progress: 72, color: 'blue', icon: 'up' },
+//   {
+//     label: 'Orders',
+//     stats: '4,735',
+//     progress: 52,
+//     color: 'red',
+//     icon: 'down',
+//   },
 ] as const;
 
 export function StatsRing() {
@@ -49,5 +50,9 @@ export function StatsRing() {
     );
   });
 
-  return <SimpleGrid cols={{ base: 1, sm: 3 }}>{stats}</SimpleGrid>;
+  return (
+    <Container px="xl" pt="xl"> {/* Add padding to the sides */}
+      <SimpleGrid cols={{ base: 1, sm: 2 }}>{stats}</SimpleGrid>
+    </Container>
+  );
 }
