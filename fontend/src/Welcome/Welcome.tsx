@@ -1,4 +1,4 @@
-import { Title, Text, Anchor } from "@mantine/core";
+import { Title, Text } from "@mantine/core";
 import * as classes from "./Welcome.css";
 
 export function Welcome() {
@@ -10,18 +10,18 @@ export function Welcome() {
           inherit
           variant="gradient"
           component="span"
-          gradient={{ from: "pink", to: "yellow" }}
+          gradient={{ from: "blue", to: "green" }}
         >
-          Mantine
+          Break It Down
         </Text>
       </Title>
       <Text color="dimmed" ta="center" size="lg" maw={580} mx="auto" mt="xl">
-        This starter Vite project includes a minimal setup, if you want to learn
-        more on Mantine + Vite integration follow{" "}
+        This AI powered project uses computer vision for you to boogie and lose weight at the same time.{" "}
+        {/* {" "}
         <Anchor href="https://mantine.dev/guides/vite/" size="lg">
           this guide
-        </Anchor>
-        . To get started edit pages/Home.page.tsx file.
+        </Anchor> */}
+        
       </Text>
     </>
   );
