@@ -1,0 +1,18 @@
+.App {
+  text-align: center;
+}
+
+.pose-container {
+  margin: 10px;
+}
+
+.video-inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Add space between the components */
+}
+
+canvas {
+  border: 1px solid #ccc; /* Optional: add a border to the canvas */
+}
