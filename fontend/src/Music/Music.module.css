@@ -20,18 +20,18 @@
 }
 
 .category-easy:hover {
-  background-color: #35F53B; /* Change background color on hover for easy */
-  color: white; /* Change text color on hover */
+  background-color: #35F53B; 
+  color: white; 
 }
 
 .category-hard:hover {
-  background-color: #F3360D ; /* Change background color on hover for hard */
-  color: white; /* Change text color on hover */
+  background-color: #F3360D ; 
+  color: white; 
 }
 
 .category-medium:hover {
-  background-color: yellow; /* Change background color on hover for medium */
-  color: black; /* Change text color on hover */
+  background-color: yellow; 
+  color: black; 
 }
 
 .link {
