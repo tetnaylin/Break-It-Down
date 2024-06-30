@@ -9,9 +9,10 @@ const icons = {
 
 export interface StatsRingProps {
   deviation: number;
+  secondsElapsed: number
 }
 
-export function StatsRing({ deviation }: StatsRingProps) {
+export function StatsRing({ deviation, secondsElapsed }: StatsRingProps) {
   let data = [
     // TODO: Add data here!
   { label: 'Final Score', stats: '456,578', progress: 65, color: 'teal', icon: icons.up },
@@ -24,6 +25,12 @@ export function StatsRing({ deviation }: StatsRingProps) {
   //     icon: 'down',
   //   },
   ];
+
+  function estimatedCaloriesBurned(time: number): number {
+    // calories lost per second on avg
+    const avgCaloriesBurned = 0.11;
+    return time * avgCaloriesBurned;
+  }
 
 
   // total deviation: 1000 -> 100%
@@ -48,6 +55,7 @@ export function StatsRing({ deviation }: StatsRingProps) {
   }
 
   data[0].stats = scoreGrade;
+  data[1].stats = estimatedCaloriesBurned(secondsElapsed).toString();
 
   const stats = data.map((stat) => {
     const Icon = stat.icon;

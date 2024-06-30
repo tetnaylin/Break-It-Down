@@ -56,11 +56,11 @@ export function GamePage() {
     </div>  )
 }
 
-export function GameOverPage({ deviation }: StatsRingProps) {
+export function GameOverPage({ deviation, secondsElapsed }: StatsRingProps) {
   return (
     <MantineProvider theme={theme}>
       <GameOver/>
-      <StatsRing deviation={deviation}/>
+      <StatsRing deviation={deviation} secondsElapsed={secondsElapsed} />
     </MantineProvider>
   )
 }

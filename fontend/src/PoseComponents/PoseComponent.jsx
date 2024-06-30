@@ -14,6 +14,8 @@ function PoseComponent(videoPath) {
   const [gradients2, setGradients2] = useState([]);
   const [sumDeviation, setSumDeviation] = useState(0);
   const [isOver, setIsOver] = useState(false);
+  const [songDurationSeconds, setSongDurationSeconds] = useState(0);
+  const durationStart = Math.floor(Date.now() / 1000);
 
   // get gradients data back from child
   const handleGradients1 = (gradients) => {
@@ -25,6 +27,8 @@ function PoseComponent(videoPath) {
   }
 
   const handleGameOver = (isGameOver) => {
+    const durationFinished = Math.floor(Date.now() / 1000);
+    setSongDurationSeconds(durationFinished - durationStart);
     setIsOver(isGameOver);
   }
 
@@ -46,7 +50,7 @@ function PoseComponent(videoPath) {
   return (
     <div className="PoseComponent">
       {isOver ? (
-        <GameOverPage deviation={sumDeviation}></GameOverPage>
+        <GameOverPage deviation={sumDeviation} secondsElapsed={songDurationSeconds}></GameOverPage>
       ) : (
         <>
           <Title className={classes.title}>
