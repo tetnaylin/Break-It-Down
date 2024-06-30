@@ -48,7 +48,7 @@ export function SecondPage() {
 // BACKEND Computer Vision Functions
 export function GamePage() {
   // Example videoPath
-  const videoPath = "/assets/IMG_2016.mp4";
+  const videoPath = "/assets/haidilao.mp4";
   //Pose Component takes in video files from public/assets
   return (
     <div>

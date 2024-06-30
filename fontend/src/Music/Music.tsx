@@ -50,7 +50,17 @@ export function Button() {
                     {content}
                 </Link>
             );
-        } else {
+        } 
+
+        if (item.name === 'Freaky') {
+            return (
+                <Link to="/selection/play" key={index} className={cx(classes.item, classes.link, getCategoryClass(item.category))}>
+                    {content}
+                </Link>
+            );
+        } 
+        
+        else {
             return (
                 <div key={index} className={cx(classes.item, getCategoryClass(item.category))}>
                     {content}
