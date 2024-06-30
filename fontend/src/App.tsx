@@ -73,7 +73,7 @@ export function GamePage2() {
 }
 export function GamePage3() {
   // Example videoPath
-  const videoPath = "/assets/Chikatto Chika Chikattsu _ Kaguya-sama_ Love is War (360p).mp4";
+  const videoPath = "/assets/chika.mp4";
   //Pose Component takes in video files from public/assets
   return (
     <div>
