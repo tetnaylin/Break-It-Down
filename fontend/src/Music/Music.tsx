@@ -52,9 +52,44 @@ export function Button() {
             );
         } 
 
-        if (item.name === 'Freaky') {
+        if (item.name === 'Nasty') {
             return (
-                <Link to="/selection/play" key={index} className={cx(classes.item, classes.link, getCategoryClass(item.category))}>
+                <Link to="/selection/play/nasty" key={index} className={cx(classes.item, classes.link, getCategoryClass(item.category))}>
+                    {content}
+                </Link>
+            );
+        } 
+        if (item.name === 'Foreigner') {
+            return (
+                <Link to="/selection/play/foreigner" key={index} className={cx(classes.item, classes.link, getCategoryClass(item.category))}>
+                    {content}
+                </Link>
+            );
+        } 
+        if (item.name === 'Daboy') {
+            return (
+                <Link to="/selection/play/daboy" key={index} className={cx(classes.item, classes.link, getCategoryClass(item.category))}>
+                    {content}
+                </Link>
+            );
+        } 
+        if (item.name === 'Chika dance') {
+            return (
+                <Link to="/selection/play/chika" key={index} className={cx(classes.item, classes.link, getCategoryClass(item.category))}>
+                    {content}
+                </Link>
+            );
+        } 
+        if (item.name === 'Nyah Arigato') {
+            return (
+                <Link to="/selection/play/arigato" key={index} className={cx(classes.item, classes.link, getCategoryClass(item.category))}>
+                    {content}
+                </Link>
+            );
+        } 
+        if (item.name === 'Renegade') {
+            return (
+                <Link to="/selection/play/renegade" key={index} className={cx(classes.item, classes.link, getCategoryClass(item.category))}>
                     {content}
                 </Link>
             );
