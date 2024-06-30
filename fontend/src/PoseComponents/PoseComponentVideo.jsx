@@ -52,11 +52,11 @@ const PoseVideoComponent = ({ videoPath, sendGradients, sendOverState }) => {
 
         drawConnectors(canvasCtx, results.poseLandmarks, POSE_CONNECTIONS, {
           color: '#00FF00',
-          lineWidth: 4
+          lineWidth: 1
         });
         drawLandmarks(canvasCtx, results.poseLandmarks, {
           color: '#FF0000',
-          lineWidth: 2
+          lineWidth: 1
         });
       }
       canvasCtx.restore();

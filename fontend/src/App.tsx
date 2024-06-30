@@ -109,7 +109,7 @@ export function GamePage6() {
 }
 export function GamePage7() {
   // Example videoPath
-  const videoPath = "/assets/Learn How to do the renegade with Charlie damelio! (240p).mp4";
+  const videoPath = "/assets/renegade.mp4";
   //Pose Component takes in video files from public/assets
   return (
     <div>
