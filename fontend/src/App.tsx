@@ -16,6 +16,13 @@ export default function App() {
           <Route path="/" element={<HomePage/>} />
            <Route path="/selection" element={<SecondPage />} />
            <Route path="/selection/play" element={<GamePage/>}/>
+           <Route path="/selection/play/nasty" element={<GamePage2/>}/>
+           <Route path="/selection/play.renegade" element={<GamePage7/>}/>
+           <Route path="/selection/play/arigato" element={<GamePage5/>}/>
+           <Route path="/selection/play/chika" element={<GamePage3/>}/>
+           <Route path="/selection/play/daboy" element={<GamePage4/>}/>
+           <Route path="/selection/play.foreigner" element={<GamePage6/>}/>
+           
            {/* <Route path="/game_over" element={<GameOverPage/>}/> */}
           </Routes>
         </Router>
@@ -49,6 +56,60 @@ export function SecondPage() {
 export function GamePage() {
   // Example videoPath
   const videoPath = "/assets/haidilao.mp4";
+  //Pose Component takes in video files from public/assets
+  return (
+    <div>
+      <PoseComponent videoPath={videoPath}></PoseComponent>
+    </div>  )
+}
+export function GamePage2() {
+  // Example videoPath
+  const videoPath = "/assets/freaky.mp4";
+  //Pose Component takes in video files from public/assets
+  return (
+    <div>
+      <PoseComponent videoPath={videoPath}></PoseComponent>
+    </div>  )
+}
+export function GamePage3() {
+  // Example videoPath
+  const videoPath = "/assets/Chikatto Chika Chikattsu _ Kaguya-sama_ Love is War (360p).mp4";
+  //Pose Component takes in video files from public/assets
+  return (
+    <div>
+      <PoseComponent videoPath={videoPath}></PoseComponent>
+    </div>  )
+}
+export function GamePage4() {
+  // Example videoPath
+  const videoPath = "/assets/Daboy ori (360p) (1).mp4";
+  //Pose Component takes in video files from public/assets
+  return (
+    <div>
+      <PoseComponent videoPath={videoPath}></PoseComponent>
+    </div>  )
+}
+export function GamePage5() {
+  // Example videoPath
+  const videoPath = "/assets/haidilao.mp4";
+  //Pose Component takes in video files from public/assets
+  return (
+    <div>
+      <PoseComponent videoPath={videoPath}></PoseComponent>
+    </div>  )
+}
+export function GamePage6() {
+  // Example videoPath
+  const videoPath = "/assets/Foreigner #sydney #townhall #sydney #sydneytrains #nsw #visitnsw (360p).mp4";
+  //Pose Component takes in video files from public/assets
+  return (
+    <div>
+      <PoseComponent videoPath={videoPath}></PoseComponent>
+    </div>  )
+}
+export function GamePage7() {
+  // Example videoPath
+  const videoPath = "/assets/Learn How to do the renegade with Charlie damelio! (240p).mp4";
   //Pose Component takes in video files from public/assets
   return (
     <div>
