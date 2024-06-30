@@ -1,3 +1,5 @@
+import {Text, Title} from '@mantine/core';
+import classes from '../HeroText/HeroText.module.css';
 import React, { useState, useEffect } from 'react';
 import PoseCameraComponent from './PoseComponentCamera';
 import PoseVideoComponent from './PoseComponentVideo';
@@ -47,7 +49,9 @@ function PoseComponent(videoPath) {
         <GameOverPage deviation={sumDeviation}></GameOverPage>
       ) : (
         <>
-          <h1>*INSERT SCORE HERE*</h1>
+          <Title className={classes.title}>
+            Break It Down
+          </Title>
           <div className="video-inputs">
             <PoseVideoComponent videoPath={videoPath.videoPath} sendGradients={handleGradients2} sendOverState={handleGameOver}/>
             <PoseCameraComponent sendGradients={handleGradients1}/>
